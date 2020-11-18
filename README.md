@@ -1,4 +1,15 @@
- # [博客地址flutterall.com: ](http://www.flutterall.com)
+![](https://github.com/kaina404/FlutterDouBan/blob/master-new/logo.png)
+
+
+[![GitHub stars](https://img.shields.io/github/stars/kaina404/FlutterDouBan.svg)](https://github.com/kaina404/FlutterDouBan/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/kaina404/FlutterDouBan.svg)](https://github.com/kaina404/FlutterDouBan/network)
+[![GitHub issues](https://img.shields.io/github/issues/kaina404/FlutterDouBan.svg)](https://github.com/kaina404/FlutterDouBan/issues) 
+
+> Flutter SDK (Channel stable, v1.5.4-hotfix.2, on Mac OS X 10.13.6 17G2112, locale zh-Hans-CN， Dart SDK : 2.5.0)
+
+> 如果产生其他依赖无法编译的问题，可以尝试将`pubspec.yaml`中的`dependencies`中的所有依赖的"^"去掉，重新编译尝试。
+
+# [博客地址flutterall.com](https://www.jianshu.com/u/1c09737416aa)
 真正的豆瓣客户端，90%还原豆瓣。首页、书影音、小组、市集及个人中心，一个不拉。项目持续更新中...
 # [演示预览(右键，新标签页面打开)](https://img.xuvip.top/douyademo.mp4)
 
@@ -17,10 +28,11 @@
     "我的"，然后打开"书影音数据来自网络"开关后，重启APP即可。
     
 # 下载地址
+## [打开新页面扫码下载](https://upload-images.jianshu.io/upload_images/3884536-d9adbda0e5f61c84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+#### [Release版本下载地址](https://img.xuvip.top/douya_release.apk)
 
-[Release版本下载地址](https://www.pgyer.com/Gt1H)
 
-![扫一扫下载体验](https://github.com/kaina404/FlutterDouBan/blob/master-new/douya-release.png)
+![扫一扫下载体验](https://img.xuvip.top/douya.png)
 
 
    
@@ -167,6 +179,10 @@
    此项目仅供大家交流沟通使用，不得用于任何商业以及利益活动。由此引起的责任，跟我无关。谢谢！
 
 # **如果您觉得还可以的话，给个Star白~**
+
+# Thanks
+
+<img src="https://github.com/kaina404/FlutterDouBan/blob/master-new/48.jpg" width="426px">
 
 ## Getting Started
 
