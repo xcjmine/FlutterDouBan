@@ -5,11 +5,27 @@
 [![GitHub forks](https://img.shields.io/github/forks/kaina404/FlutterDouBan.svg)](https://github.com/kaina404/FlutterDouBan/network)
 [![GitHub issues](https://img.shields.io/github/issues/kaina404/FlutterDouBan.svg)](https://github.com/kaina404/FlutterDouBan/issues) 
 
-> Flutter SDK (Channel stable, v1.5.4-hotfix.2, on Mac OS X 10.13.6 17G2112, locale zh-Hans-CN， Dart SDK : 2.5.0)
+> SDK Version
+```java
+kaina404 ~ % flutter --version
+Flutter 2.5.3 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 18116933e7 (4 months ago) • 2021-10-15 10:46:35 -0700
+Engine • revision d3ea636dc5
+Tools • Dart 2.14.4
+kaina404 ~ % flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 2.5.3, on macOS 11.4 20F71 darwin-arm, locale zh-Hans-CN)
+[✓] Android toolchain - develop for Android devices (Android SDK version 31.0.0)
+[✓] Xcode - develop for iOS and macOS
+[✓] Chrome - develop for the web
+[✓] Android Studio (version 2020.3)
+[✓] VS Code (version 1.62.3)
+[✓] Connected device (3 available)
+```
 
 > 如果产生其他依赖无法编译的问题，可以尝试将`pubspec.yaml`中的`dependencies`中的所有依赖的"^"去掉，重新编译尝试。
 
-# [博客地址flutterall.com](https://www.jianshu.com/u/1c09737416aa)
+# [博客地址flutterall.xyz](https://www.jianshu.com/u/1c09737416aa)
 真正的豆瓣客户端，90%还原豆瓣。首页、书影音、小组、市集及个人中心，一个不拉。项目持续更新中...
 # [演示预览(右键，新标签页面打开)](https://img.xuvip.top/douyademo.mp4)
 

@@ -8,11 +8,12 @@ import 'package:doubanapp/bean/comments_entity.dart';
 import 'package:doubanapp/bean/search_result_entity.dart';
 import 'package:doubanapp/bean/celebrity_entity.dart' as celebrity;
 import 'package:doubanapp/bean/celebrity_work_entity.dart';
-import 'package:doubanapp/util/palette_generator.dart';
+import 'package:doubanapp/http/mock_request.dart';
 import 'dart:math' as math;
 //import 'package:palette_generator/palette_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:doubanapp/bean/movie_long_comments_entity.dart';
+import 'package:palette_generator/palette_generator.dart';
 typedef RequestCallBack<T> = void Function(T value);
 
 class API {
@@ -36,6 +37,8 @@ class API {
   static const String REIVIEWS = '/v2/movie/subject/26266893/reviews';
 
   var _request = HttpRequest(API.BASE_URL);
+
+  var _mockRequest = MockRequest();
 
   Future<dynamic> _query(String uri, String value) async {
     final result = await _request
@@ -75,6 +78,7 @@ class API {
 
   ///影院热映 + 即将上映
   void getHotComingSoon(RequestCallBack requestCallBack) async {
+
     //影院热映
     Map result = await _request.get(IN_THEATERS);
     var resultList = result['subjects'];
@@ -133,8 +137,9 @@ class API {
   ///26266893 电影条目信息
   ///https://api.douban.com/v2/movie/subject/26266893?apikey=0b2bdeda43b5688921839c8ecb20399b
   void getMovieDetail(subjectId, RequestCallBack requestCallBack) async {
-    final result = await _request.get(
-        '/v2/movie/subject/$subjectId?apikey=0b2bdeda43b5688921839c8ecb20399b');
+    // final result = await _request.get(
+    //     '/v2/movie/subject/$subjectId?apikey=0b2bdeda43b5688921839c8ecb20399b');
+    final result = await _mockRequest.get("subject_26266893");
     MovieDetailBean bean = MovieDetailBean.fromJson(result);
     requestCallBack(bean);
   }
@@ -142,8 +147,8 @@ class API {
   ///电影短评
   ///https://api.douban.com/v2/movie/subject/26266893/comments?apikey=0b2bdeda43b5688921839c8ecb20399b
   void getComments(subjectId, RequestCallBack requestCallBack) async {
-    final result = await _request.get(
-        '/v2/movie/subject/$subjectId/comments?apikey=0b2bdeda43b5688921839c8ecb20399b');
+    // final result = await _request.get('/v2/movie/subject/$subjectId/comments?apikey=0b2bdeda43b5688921839c8ecb20399b');
+    final result = await _mockRequest.mock2("comments");
     CommentsEntity bean = CommentsEntity.fromJson(result);
     requestCallBack(bean);
   }

@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:doubanapp/util/palette_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:doubanapp/http/API.dart';
@@ -23,6 +22,7 @@ import 'package:flutter/material.dart';
 import 'package:doubanapp/http/http_request.dart';
 import 'package:doubanapp/http/mock_request.dart';
 import 'package:doubanapp/widgets/loading_widget.dart';
+import 'package:palette_generator/palette_generator.dart';
 import '../../bean/movie_long_comments_entity.dart';
 import '../../widgets/bottom_drag_widget.dart';
 import 'long_comment_widget.dart';
@@ -247,7 +247,7 @@ class _DetailPageState extends State<DetailPage> {
               ],
             ),
             onTap: () {
-              Router.push(context, Router.personDetailPage,
+              MyRouter.push(context, MyRouter.personDetailPage,
                   {'personImgUrl': imgUrl, 'id': id});
             },
           ),
@@ -327,7 +327,7 @@ class _DetailPageState extends State<DetailPage> {
                       ),
                     ),
                     onTap: () {
-                      Router.push(context, Router.playListPage,
+                      MyRouter.push(context, MyRouter.playListPage,
                           _movieDetailBean.trailers);
                     },
                   );
@@ -493,7 +493,7 @@ class _DetailPageState extends State<DetailPage> {
               padding: EdgeInsets.all(12.0),
             ),
             onTap: () {
-              Router.push(context, bean.author.alt, {'title': '个人主页'});
+              MyRouter.push(context, bean.author.alt, {'title': '个人主页'});
             },
           );
         }
@@ -542,8 +542,8 @@ class _DetailPageState extends State<DetailPage> {
 
   void requestAPI() async {
     Future(() {
-      return _request.get(
-          '/v2/movie/subject/$subjectId?apikey=0b2bdeda43b5688921839c8ecb20399b');
+      return _mockRequest.mock2("subject_26266893");
+      // return _request.get('/v2/movie/subject/$subjectId?apikey=0b2bdeda43b5688921839c8ecb20399b');
     }).then((result) {
       _movieDetailBean = MovieDetailBean.fromJson(result);
       return PaletteGenerator.fromImageProvider(
@@ -552,15 +552,16 @@ class _DetailPageState extends State<DetailPage> {
       if (paletteGenerator != null && paletteGenerator.colors.isNotEmpty) {
         pickColor = paletteGenerator.colors.toList()[0];
       }
-      return _request.get(
-          '/v2/movie/subject/$subjectId/comments?apikey=0b2bdeda43b5688921839c8ecb20399b');
+      // return _request.get(
+      //     '/v2/movie/subject/$subjectId/comments?apikey=0b2bdeda43b5688921839c8ecb20399b');
+      return _mockRequest.mock2("comments");
     }).then((result2) {
       commentsEntity = CommentsEntity.fromJson(result2);
     }).then((_) {
-      return _request.get(
-          '/v2/movie/subject/$subjectId/reviews?apikey=0b2bdeda43b5688921839c8ecb20399b');
+      // return _request.get(
+      //     '/v2/movie/subject/$subjectId/reviews?apikey=0b2bdeda43b5688921839c8ecb20399b');
       //使用模拟数据
-//      return _mockRequest.get(API.REIVIEWS);
+     return _mockRequest.get(API.REIVIEWS);
     }).then((result3) {
       movieLongCommentReviews = MovieLongCommentsEntity.fromJson(result3);
       setState(() {
